@@ -1,4 +1,5 @@
-Welcome to this github repository! This is a collection of interview questions📝 compiled by **Du WeiLin**, most of which are sourced from *Xiaohongshu*📔.
+# Interview Records 
+Welcome to this github repository! This is a collection of interview questions📝 compiled by **Du WeiLin**, most of which are sourced from *Xiaohongshu*📔. It mainly focuses on algorithm interview questions, and also includes topics on Linux and Git.
 
 ---
 ## 📥 Import into Obsidian
@@ -46,6 +47,11 @@ To enable full functionality, please install the following Obsidian plugins:
     
 ---
 
+# Record Display
+
+![[display.png]]
+
+The code is as follows:
 
 ```dataviewjs
 dv.span("** 😊 Interview  😥**") /* optional ⏹️💤⚡⚠🧩↑↓⏳📔💾📁📝🔄📝🔀⌨️🕸️📅🔍✨*/
@@ -60,11 +66,9 @@ const calendarData = {
 	},
 	showCurrentDayBorder: true, // (optional) defaults to true
 	defaultEntryIntensity: 4,   // (optional) defaults to 4
-	// 不要写死 intensityScale：若 question 小于起始值（例如 2 < 10），格子可能不显示
 	entries: [],                // (required) populated in the DataviewJS loop below
 }
 dv.header(2, "Heatmap Calendar")
-// 不用 dv.pages('"record"')：若库根是上一级目录，实际路径是 interiew/record/...，带引号路径会扫不到
 const inRecord = (p) => {
 	const path = String(p.file.path).replace(/\\/g, "/")
 	return path === "record" || path.startsWith("record/") || path.includes("/record/")
@@ -83,13 +87,13 @@ for (let page of dv.pages().where(p => inRecord(p) && questionOf(p))) {
 
 renderHeatmapCalendar(this.container, calendarData)
 
-// Note list — 与热力图同范围：`record` 文件夹（任意库根深度）
+// Note list
 dv.header(2, "Note List")
 
 const bySource = new Map()
 for (let page of dv.pages().where(p => inRecord(p) && p.file.path !== dv.current().file.path)) {
 	const raw = page.source
-	const key = raw != null && String(raw).trim() !== "" ? String(raw).trim() : "（未标注 source）"
+	const key = raw != null && String(raw).trim() !== "" ? String(raw).trim() : "hasn't source"
 	if (!bySource.has(key)) bySource.set(key, [])
 	bySource.get(key).push(page)
 }
@@ -97,7 +101,7 @@ for (let page of dv.pages().where(p => inRecord(p) && p.file.path !== dv.current
 const sources = [...bySource.keys()].sort((a, b) => a.localeCompare(b, "zh-Hans-CN"))
 
 if (sources.length === 0) {
-	dv.paragraph("未在 `record` 路径下找到除本页外的笔记（请确认库根：笔记应匹配 record/ 或 */record/）。")
+	dv.paragraph("Not find note in `record`.")
 } else {
 	for (let src of sources) {
 		const group = bySource.get(src).sort((a, b) => a.file.name.localeCompare(b.file.name))
