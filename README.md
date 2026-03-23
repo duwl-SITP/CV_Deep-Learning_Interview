@@ -50,7 +50,7 @@ To enable full functionality, please install the following Obsidian plugins:
 
 # Record Display
 
-![[./pics/display.png|435]]
+![display](./pics/display.png)
 
 The code is as follows:
 
