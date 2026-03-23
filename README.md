@@ -1,11 +1,12 @@
 # Interview Records 
-Welcome to this github repository! This is a collection of interview questions📝 compiled by **Du WeiLin**, most of which are sourced from *Xiaohongshu*📔. It mainly focuses on algorithm interview questions, and also includes topics on Linux and Git.
+
+Welcome to this github repository! This is a collection of interview questions📝 compiled by **Duwl**, most of which are sourced from *Xiaohongshu*📔. It mainly focuses on algorithm interview questions, and also includes topics on Linux and Git.
 
 ---
 ## 📥 Import into Obsidian
 
 1. **Get a local copy of this repository**
-   - **Git:** `git clone <your-repo-url>.git` then open the cloned folder.
+   - **Git:** `git clone https://github.com/duwl-SITP/CV_Deep-Learning_Interview.git` then open the cloned folder.
    - **No Git:** on GitHub use **Code → Download ZIP**, unzip, and use the extracted folder.
 
 2. **Open it as an Obsidian vault**
@@ -49,7 +50,7 @@ To enable full functionality, please install the following Obsidian plugins:
 
 # Record Display
 
-![[display.png]]
+![[./pics/display.png|435]]
 
 The code is as follows:
 
